@@ -5,5 +5,5 @@ class ECDF:
     def __init__(self, sample):
         self.sample = np.array(sample)
     def __call__(self,x):
-        fun = np.vectorize(lambda x: sum(x>=self.sample)/len(self.sample))
+        fun = np.vectorize(lambda x: np.mean(x >= self.sample))
         return fun(x)
