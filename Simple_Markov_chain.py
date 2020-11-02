@@ -1,9 +1,9 @@
 import numpy as np
 """Simple Markov chain:
-        Initial state: State 1
+        Initial state: State_1
         Probability of transition:
-            State 1 -> State 0: 0.2
-            State 0 -> State 1: 0.1
+            State_1 -> State_0: 0.2
+            State_0 -> State_1: 0.1
 """
 n = 10_000_000
 state = np.ones(n)
@@ -19,4 +19,4 @@ for i in range(n-1):
             state[i+1]=0
 frac_0 = 1 - state.mean()
 
-print(f"Time in State 0: {frac_0:%}")
+print(f"Time in State_0: {frac_0:%}")
