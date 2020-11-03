@@ -12,7 +12,7 @@ n = 100_000_000
 state = np.ones(n, dtype=np.int_)
 trans = np.random.uniform(size=n)
 
-@jit
+@jit(nopython=True)
 def markov_chain(state, trans):
     for i in range(n-1):
         if state[i]==0:
